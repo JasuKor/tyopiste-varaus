@@ -222,7 +222,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f2f2f2;min-height:100vh
 <body>
 
 <!-- ══════ GITHUB SETUP ══════ -->
-<div class="setup-screen" id="setupScreen" style="display:none">
+<div class="setup-screen" id="setupScreen">
 <div class="setup-box">
 <h2>⚙️ GitHub-synkronointi</h2>
 <p class="setup-sub">Yhdistä GitHub-repoon, jotta varaukset synkronoituvat kaikkien laitteiden välillä.<br>Tämä asetus tehdään <b>kerran per laite</b>.</p>
@@ -504,6 +504,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   if(!ghConfig){
     document.getElementById('setupScreen').style.display='flex';
   }else{
+    document.getElementById('setupScreen').style.display='none';
     await loadAllData();
     document.getElementById('loginScreen').style.display='flex';
     buildNameGrid();
